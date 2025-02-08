@@ -17,7 +17,7 @@ model code {
   id          Int      @id @default(autoincrement())
   title       String   @db.VarChar(20)
   description String   @db.VarChar(255)
-  evaluation  Int
+  evaluation  Int      @default(0)
   code        String   @db.VarChar(5000)
   timestamp   DateTime @default(now())
 }
