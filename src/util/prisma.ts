@@ -2,17 +2,17 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export function UploadImage(
+export function UploadSource(
 	title: string,
 	description: string,
-	base64_image: string,
+	source_code: string,
 ) {
 	return prisma.code
 		.create({
 			data: {
 				title: title,
 				description: description,
-				code: base64_image,
+				code: source_code,
 			},
 		})
 		.catch((error) => {
