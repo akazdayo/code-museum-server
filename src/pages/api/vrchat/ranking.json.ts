@@ -1,5 +1,6 @@
 // ランキングにする
 // fetchの制限が5/sなので、10個くらい一つのファイルにまとめる
+export const prerender = false;
 import { GetRankings } from "../../../util/prisma";
 
 export async function GET() {

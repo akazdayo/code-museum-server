@@ -1,5 +1,5 @@
+export const prerender = false;
 import type { APIRoute } from "astro";
-import sharp from "sharp";
 import { UploadSource } from "../../util/prisma";
 
 export const post: APIRoute = async ({ request }) => {
