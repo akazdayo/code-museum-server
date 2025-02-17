@@ -1,6 +1,6 @@
 export const prerender = false;
 import type { APIRoute } from "astro";
-import { UploadSource } from "../../util/prisma";
+import { UploadSource } from "../../libs/prisma";
 
 export const post: APIRoute = async ({ request }) => {
 	try {

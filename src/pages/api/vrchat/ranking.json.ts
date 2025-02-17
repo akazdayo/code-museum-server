@@ -2,7 +2,7 @@
 // fetchの制限が5/sなので、10個くらい一つのファイルにまとめる
 export const prerender = false;
 import type { APIRoute } from "astro";
-import { GetRankings } from "../../../util/prisma";
+import { GetRankings } from "../../../libs/prisma.ts";
 
 export const GET: APIRoute = async (req) => {
 	const rankings = await GetRankings();
