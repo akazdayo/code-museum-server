@@ -12,7 +12,6 @@
     "@astrojs/cloudflare": "^12.2.1",
     "@tailwindcss/vite": "^4.0.4",
     "astro": "^5.2.5",
-    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.3",
     "tailwindcss": "^4.0.4",
     "wrangler": "^3.109.1"

@@ -2,12 +2,20 @@
 // fetchの制限が5/sなので、10個くらい一つのファイルにまとめる
 export const prerender = false;
 import type { APIRoute } from "astro";
-import { GetRankings } from "../../../libs/prisma.ts";
+import { drizzle } from "drizzle-orm/d1";
+import { codeTable } from "../../../db/schema";
+import type { Runtime } from "@astrojs/cloudflare";
 
-export const GET: APIRoute = async (req) => {
-	const rankings = await GetRankings();
-	// JSON形式に変換して返す
-	return new Response(JSON.stringify(rankings), {
-		headers: { "Content-Type": "application/json" },
-	});
-};
+export async function GET({ locals }: { locals: Runtime }) {
+	const envDB = locals.runtime.env.DB as D1Database;
+	const db = drizzle(envDB);
+
+	const rankings = await db.select().from(codeTable);
+
+	return new Response(
+		JSON.stringify({
+			body: { rankings },
+		}),
+		{ status: 200 },
+	);
+}

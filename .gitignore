@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # わからないから一応つけとく
 wrangler.toml
+.wrangler

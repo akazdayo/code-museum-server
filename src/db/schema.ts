@@ -1,8 +1,10 @@
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const usersTable = sqliteTable("users_table", {
+export const codeTable = sqliteTable("code_table", {
 	id: int().primaryKey({ autoIncrement: true }),
-	name: text().notNull(),
-	age: int().notNull(),
-	email: text().notNull().unique(),
+	title: text("title", { length: 30 }).notNull(),
+	description: text("description", { length: 255 }).notNull(),
+	likes: int().default(0),
+	code: text().notNull(),
+	lang: text().notNull(),
 });
