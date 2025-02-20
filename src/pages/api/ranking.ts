@@ -1,8 +1,8 @@
 // ランキングにする
 // fetchの制限が5/sなので、10個くらい一つのファイルにまとめる
 export const prerender = false;
-import { codeTable } from "../../../schema";
-import { db } from "../../../db";
+import { codeTable } from "../../schema";
+import { db } from "../../db";
 
 export async function GET() {
 	const result = await db
