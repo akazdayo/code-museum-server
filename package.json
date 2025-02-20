@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "prisma generate && astro build",
+    "build": "drizzle-kit generate && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
