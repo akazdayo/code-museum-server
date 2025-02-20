@@ -9,5 +9,8 @@ export default defineConfig({
 	output: "static",
 	vite: {
 		plugins: [tailwindcss()],
+		ssr: {
+			external: ["path", "os", "crypto"],
+		},
 	},
 });
