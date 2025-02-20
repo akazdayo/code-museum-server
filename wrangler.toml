@@ -5,5 +5,5 @@ node_compat = true
 
 [[d1_databases]]
 binding = "DB"
-database_name = "d1-database"
+database_name = "code-museum"
 database_id = "fb60b0ad-6ec1-45c5-9124-41c2f36fc233"
