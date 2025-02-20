@@ -5,6 +5,7 @@ import type { APIRoute } from "astro";
 import { drizzle } from "drizzle-orm/d1";
 import { codeTable } from "../../../db/schema";
 import type { Runtime } from "@astrojs/cloudflare";
+import type { D1Database } from "@cloudflare/workers-types";
 
 export async function GET({ locals }: { locals: Runtime }) {
 	const envDB = locals.runtime.env.DB as D1Database;
@@ -12,10 +13,5 @@ export async function GET({ locals }: { locals: Runtime }) {
 
 	const rankings = await db.select().from(codeTable);
 
-	return new Response(
-		JSON.stringify({
-			body: { rankings },
-		}),
-		{ status: 200 },
-	);
+	return new Response(JSON.stringify(rankings), { status: 200 });
 }
