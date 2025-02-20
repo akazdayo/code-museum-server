@@ -1,0 +1,9 @@
+name = "code-museum"
+main = "src/pages/index.astro"
+compatibility_date = "2025-02-17"
+node_compat = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "d1-database"
+database_id = "fb60b0ad-6ec1-45c5-9124-41c2f36fc233"
