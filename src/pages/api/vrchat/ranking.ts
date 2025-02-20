@@ -11,5 +11,10 @@ export async function GET() {
 		.orderBy(codeTable.likes)
 		.limit(10);
 
-	return new Response(JSON.stringify(result), { status: 200 });
+	return new Response(JSON.stringify(result), {
+		status: 200,
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
 }
