@@ -5,6 +5,6 @@
 ```bash
 $ mise install
 $ bun i
-$ bunx prisma generate
+$ bunx drizzle generate
 $ bun run dev
 ```
