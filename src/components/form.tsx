@@ -8,7 +8,7 @@ export default function Form() {
         <br/>
         <textarea defaultValue="コード" className="textarea" name="text"/>
         <br/>
-        <textarea defaultValue="言語" className="textarea" name="text"/>
+        <textarea defaultValue="typescript" className="textarea" name="text"/>
         
         <button className="btn" type="submit" onClick={(e) => {
           e.preventDefault();
