@@ -44,8 +44,13 @@ export async function convertToUnityRichText(
 	return unityRichText;
 }
 
-export async function toPlain(code: string): Promise<string> {
+export function toPlain(code: string): string {
 	// Unity Rich Textのタグを削除してプレーンテキストを取得
-	const plainText = code.replace(/<color=[^>]+>([^<]*)<\/color>/g, "$1");
+	let plainText = code;
+	// すべてのタグが削除されるまで繰り返し処理
+	const regex = /<color=(?:[^>])+>([\s\S]*?)<\/color>/g;
+	while (regex.test(plainText)) {
+		plainText = plainText.replace(regex, "$1");
+	}
 	return plainText;
 }

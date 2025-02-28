@@ -1,35 +1,34 @@
 {
-  "name": "beautiful-code-museum",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "drizzle-kit generate && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "studio": "drizzle-kit studio",
-    "check": "biome check src/"
-  },
-  "dependencies": {
-    "@astrojs/solid-js": "^5.0.4",
-    "@astrojs/vercel": "^8.0.7",
-    "@neondatabase/serverless": "^0.10.4",
-    "@tailwindcss/vite": "^4.0.7",
-    "astro": "^5.2.5",
-    "cheerio": "^1.0.0",
-    "daisyui": "^5.0.0-beta.8",
-    "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.39.3",
-    "prettier": "^3.5.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "solid-js": "^1.9.5",
-    "tailwindcss": "^4.0.7",
-    "wrangler": "^3.109.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "drizzle-kit": "^0.30.4",
-    "shiki": "^3.0.0",
-    "tsx": "^4.19.2"
-  }
+	"name": "beautiful-code-museum",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "drizzle-kit generate && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"studio": "drizzle-kit studio",
+		"check": "biome check src/"
+	},
+	"dependencies": {
+		"@astrojs/solid-js": "^5.0.4",
+		"@astrojs/vercel": "^8.0.7",
+		"@neondatabase/serverless": "^0.10.4",
+		"@tailwindcss/vite": "^4.0.7",
+		"astro": "^5.2.5",
+		"cheerio": "^1.0.0",
+		"daisyui": "^5.0.0-beta.8",
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.39.3",
+		"prettier": "^3.5.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"solid-js": "^1.9.5",
+		"tailwindcss": "^4.0.7",
+		"shiki": "^3.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"drizzle-kit": "^0.30.4",
+		"tsx": "^4.19.2"
+	}
 }
