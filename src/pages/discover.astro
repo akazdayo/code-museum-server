@@ -1,0 +1,38 @@
+---
+import { sql } from "drizzle-orm";
+import CodeMordal from "../components/discover/CodeMordal.astro";
+import MockUp from "../components/discover/MockUp.astro";
+import { db } from "../db";
+import Layout from "../layouts/Layout.astro";
+import { codeTable } from "../schema";
+
+const ranking = await db
+	.select()
+	.from(codeTable)
+	.orderBy(sql`${codeTable.likes} desc`);
+
+// コードの内容を常に15行にする
+const limitedRanking = ranking.map((item) => {
+	const lines = item.code.split("\n");
+	if (lines.length > 15) {
+		// 15行より多い場合は切り詰める
+		item.code = lines.slice(0, 16).join("\n");
+	} else if (lines.length <= 15) {
+		// 15行より少ない場合は空行を追加
+		const emptyLinesToAdd = 18 - lines.length;
+		item.code = lines.concat(Array(emptyLinesToAdd).fill("")).join("\n");
+	}
+	return item;
+});
+---
+
+<Layout title="発見">
+	<CodeMordal codes={ranking[2]} />
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-5">
+		{
+			limitedRanking.map((item, i) => (
+				<MockUp codes={item} class="w-full h-full" />
+			))
+		}
+	</div>
+</Layout>

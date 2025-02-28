@@ -30,7 +30,7 @@ export async function convertToUnityRichText(
 				// style属性から色情報を抽出
 				if (styleAttr) {
 					const colorMatch = styleAttr.match(/color:(#[a-fA-F0-9]+)/);
-					if (colorMatch && colorMatch[1]) {
+					if (colorMatch?.[1]) {
 						color = colorMatch[1];
 					}
 				}
@@ -42,4 +42,10 @@ export async function convertToUnityRichText(
 	});
 
 	return unityRichText;
+}
+
+export async function toPlain(code: string): Promise<string> {
+	// Unity Rich Textのタグを削除してプレーンテキストを取得
+	const plainText = code.replace(/<color=[^>]+>([^<]*)<\/color>/g, "$1");
+	return plainText;
 }
