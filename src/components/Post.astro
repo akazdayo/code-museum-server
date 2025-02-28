@@ -1,16 +1,16 @@
 ---
-import Form from "./form";
 import LangSelector from "./LangSelector.astro";
+import Form from "./form";
 ---
 
 <form>
-    <textarea value="タイトル" class="textarea" name="text"></textarea>
-    <br />
-    <textarea value="説明" class="textarea" name="text"></textarea>
-    <br />
-    <textarea value="コード" class="textarea" name="text"></textarea>
-    <br />
-    <LangSelector />
-    <br />
-    <Form client:load />
+	<textarea value="タイトル" class="textarea" name="text"></textarea>
+	<br />
+	<textarea value="説明" class="textarea" name="text"></textarea>
+	<br />
+	<textarea value="コード" class="textarea" name="text"></textarea>
+	<br />
+	<LangSelector />
+	<br />
+	<Form client:load />
 </form>

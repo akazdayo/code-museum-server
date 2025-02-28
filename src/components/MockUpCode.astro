@@ -1,0 +1,13 @@
+---
+const { code } = Astro.props;
+const codeRows = code.split("\n");
+console.log(codeRows);
+---
+
+{
+	codeRows.map((row: string, index: number) => (
+		<pre data-prefix={index + 1}>
+			<code>{row}</code>
+		</pre>
+	))
+}

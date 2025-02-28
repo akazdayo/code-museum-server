@@ -1,5 +1,5 @@
-import { codeToHtml } from "shiki";
 import * as cheerio from "cheerio";
+import { codeToHtml } from "shiki";
 
 // Unity Rich Textに変換する関数
 export async function convertToUnityRichText(

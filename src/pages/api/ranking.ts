@@ -1,9 +1,9 @@
 // ランキングにする
 // fetchの制限が5/sなので、10個くらい一つのファイルにまとめる
 export const prerender = false;
-import { codeTable } from "../../schema";
-import { db } from "../../db";
 import { sql } from "drizzle-orm";
+import { db } from "../../db";
+import { codeTable } from "../../schema";
 
 export async function GET() {
 	const result = await db

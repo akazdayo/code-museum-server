@@ -1,8 +1,8 @@
 export const prerender = false;
-import { codeTable, type InsertCode } from "../../schema";
-import { db } from "../../db";
 import type { APIRoute } from "astro";
+import { db } from "../../db";
 import { convertToUnityRichText } from "../../libs/syntax";
+import { type InsertCode, codeTable } from "../../schema";
 
 export const POST: APIRoute = async ({ request }) => {
 	if (request.headers.get("Content-Type") === "application/json") {
