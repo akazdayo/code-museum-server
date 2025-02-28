@@ -3,13 +3,29 @@ import { Code } from "astro:components";
 import { toPlain } from "../../libs/syntax";
 const { codes } = Astro.props;
 const plain = await toPlain(codes.code);
+
+// コードの内容を常に15行にする
 ---
 
 <div class="flex justify-center m-5 gap-4">
 	<div class="mockup-window bg-base-300 border w-1/3 flex-3/4">
-		<Code code={plain} lang={codes.lang.toLowerCase()} />
+		<Code
+			code={(() => {
+				let limitedCode = plain;
+				const lines = plain.split("\n");
+				if (lines.length <= 15) {
+					// 15行より少ない場合は空行を追加
+					const emptyLinesToAdd = 18 - lines.length;
+					limitedCode = lines
+						.concat(Array(emptyLinesToAdd).fill(""))
+						.join("\n");
+				}
+				return limitedCode;
+			})()}
+			lang={codes.lang.toLowerCase()}
+		/>
 	</div>
 	<div class="flex-1/4 border rounded-xl">
-		<h1 class="text-3xl">Test</h1>
+		<h1 class="text-3xl">{codes.title}</h1>
 	</div>
 </div>

@@ -13,7 +13,22 @@ const plain = await toPlain(codes.code);
 	<div class="mockup-browser-toolbar">
 		<div>{codes.title}</div>
 	</div>
-	<Code code={plain} lang={codes.lang.toLowerCase()} />
+	<Code
+		code={(() => {
+			let limitedCode = null;
+			const lines = plain.split("\n");
+			if (lines.length > 15) {
+				// 15行より多い場合は切り詰める
+				limitedCode = lines.slice(0, 16).join("\n");
+			} else {
+				// 15行より少ない場合は空行を追加
+				const emptyLinesToAdd = 18 - lines.length;
+				limitedCode = lines.concat(Array(emptyLinesToAdd).fill("")).join("\n");
+			}
+			return limitedCode;
+		})()}
+		lang={codes.lang.toLowerCase()}
+	/>
 </div>
 
 <dialog id={`_${codes.id}`} class="modal">
