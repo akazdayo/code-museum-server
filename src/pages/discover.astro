@@ -1,24 +1,10 @@
 ---
-import { sql } from "drizzle-orm";
 import MockUp from "../components/discover/MockUp";
-import { db } from "../db";
 import Layout from "../layouts/Layout.astro";
-import { codeTable } from "../schema";
-
-const ranking = await db
-	.select()
-	.from(codeTable)
-	.orderBy(sql`${codeTable.likes} desc`);
 ---
 
 <Layout title="発見">
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-5">
-		{
-			ranking.map((item, _) => (
-				<div class="w-full h-full">
-					<MockUp codes={item} client:visible />
-				</div>
-			))
-		}
+		<MockUp client:visible />
 	</div>
 </Layout>

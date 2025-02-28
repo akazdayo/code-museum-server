@@ -54,3 +54,17 @@ export function toPlain(code: string): string {
 	}
 	return plainText;
 }
+
+export function to15Lines(code: string): string {
+	let result = code;
+	const lines = code.split("\n");
+	if (lines.length > 15) {
+		// 16行目以降を削除
+		result = lines.slice(0, 16).join("\n");
+	} else {
+		// 15行に満たない場合は空行を追加
+		const emptyLinesToAdd = 17 - lines.length; // 本当は15にしたいけど、なんか17じゃないと高さが揃わなかった
+		result = lines.concat(Array(emptyLinesToAdd).fill("")).join("\n");
+	}
+	return result;
+}
