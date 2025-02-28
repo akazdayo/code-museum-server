@@ -3,12 +3,11 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 import solidJs from "@astrojs/solid-js";
-
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-	adapter: cloudflare(),
+	adapter: vercel(),
 	output: "static",
 
 	vite: {
