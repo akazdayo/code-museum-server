@@ -11,8 +11,8 @@
 		"check": "biome check src/"
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^12.2.3",
 		"@astrojs/solid-js": "^5.0.4",
-		"@astrojs/vercel": "^8.0.7",
 		"@neondatabase/serverless": "^0.10.4",
 		"@tailwindcss/vite": "^4.0.7",
 		"astro": "^5.2.5",
@@ -22,9 +22,9 @@
 		"drizzle-orm": "^0.39.3",
 		"prettier": "^3.5.2",
 		"prettier-plugin-astro": "^0.14.1",
+		"shiki": "^3.0.0",
 		"solid-js": "^1.9.5",
-		"tailwindcss": "^4.0.7",
-		"shiki": "^3.0.0"
+		"tailwindcss": "^4.0.7"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
