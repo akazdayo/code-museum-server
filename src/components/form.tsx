@@ -7,7 +7,16 @@ export default function Form() {
 				e.preventDefault();
 				const form = e.currentTarget.closest("form");
 				if (form) {
-					const textareas = form.querySelectorAll("textarea");
+					// 各入力フィールドを明示的にIDで取得
+					const titleInput = document.getElementById(
+						"title-input",
+					) as HTMLInputElement;
+					const descInput = document.getElementById(
+						"desc-input",
+					) as HTMLInputElement;
+					const codeInput = document.getElementById(
+						"code-input",
+					) as HTMLInputElement;
 					const languageSelect = form.querySelector(
 						"#language-select",
 					) as HTMLSelectElement;
@@ -18,9 +27,9 @@ export default function Form() {
 							"Content-Type": "application/json",
 						},
 						body: JSON.stringify({
-							title: textareas[0].value,
-							description: textareas[1].value,
-							code: textareas[2].value,
+							title: titleInput.value,
+							description: descInput.value,
+							code: codeInput.value,
 							lang: languageSelect.value,
 						}),
 					});

@@ -4,13 +4,32 @@ import Form from "./form";
 ---
 
 <form>
-	<textarea value="タイトル" class="textarea" name="text"></textarea>
-	<br />
-	<textarea value="説明" class="textarea" name="text"></textarea>
-	<br />
-	<textarea value="コード" class="textarea" name="text"></textarea>
-	<br />
-	<LangSelector />
-	<br />
-	<Form client:load />
+	<fieldset
+		class="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box"
+	>
+		<legend class="fieldset-legend">Upload Codes</legend>
+
+		<label class="fieldset-label">Title</label>
+		<input
+			type="text"
+			id="title-input"
+			class="input"
+			placeholder="美しいコード美術館"
+		/>
+
+		<label class="fieldset-label">Description</label>
+		<input type="text" id="desc-input" class="input" placeholder="短い説明" />
+
+		<label class="fieldset-label">Code</label>
+		<input
+			type="text"
+			id="code-input"
+			class="input"
+			placeholder="ソースコード"
+		/>
+
+		<label class="fieldset-label">Language</label>
+		<LangSelector />
+		<Form client:load />
+	</fieldset>
 </form>

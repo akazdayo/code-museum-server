@@ -6,7 +6,7 @@ export default function Code(props: { code: string; lang: string }) {
 	const [html] = createResource(async () => {
 		return await codeToHtml(props.code, {
 			lang: props.lang.toLowerCase(),
-			theme: "vitesse-dark",
+			theme: "dracula",
 		});
 	});
 
